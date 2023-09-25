@@ -37,3 +37,8 @@ app.listen(PORT, () => {
 const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 
+app.use(passport.initialize());
+app.use(passport.session());
+
+const questionsRouter = require('./routes/questions');
+app.use('/', questionsRouter);
